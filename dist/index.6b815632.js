@@ -1408,7 +1408,7 @@ function searchForm() {
                             <span class="d-none d-md-block d-lg-block">Search</span>
                             <i class="fa fa-search fa-rotate-90 d-md-none d-lg-none"></i>
                         </button>
-                        <div class="qg-search-concierge qg-search-concierge-initial">
+                        <!-- <div class="qg-search-concierge qg-search-concierge-initial">
                             <div class="qg-search-concierge-group helper">
                                 <div class="qg-search-concierge-content">
                                     <h4>Popular services</h4>
@@ -1431,9 +1431,9 @@ function searchForm() {
                                     </ul>
                                     <a href="https://www.qld.gov.au/queenslanders" tabindex="-1" class="all" data-analytics-link-group="qg-global-search-category">Browse all categories</a>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
-
+                        -->
 
                         <div class="qg-search-concierge qg-search-concierge-help">
                             <div class="qg-search-concierge-group suggestions" @click="${onSubmit}"></div>
