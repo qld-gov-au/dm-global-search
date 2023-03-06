@@ -6,7 +6,7 @@ https://disaster.qld.gov.au/search
 
 - The build files are generated using in the dist folder of the 'dm-global-search' repo
 
-- The 'dm-global-search' repo is connected via GitBridge (Disaster Search) #366180 to retrieve changes on Squiz Matrix
+- The 'dm-global-search' repo is connected via GitBridge (Disaster site search) #366327 to retrieve changes on Squiz Matrix
 
 
 ### Tech in use
