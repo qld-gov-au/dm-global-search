@@ -12,6 +12,7 @@
 
 #qg-primary-content .qg-search-concierge-help {
   z-index: 999;
+  display: none;
 }
 
 #qg-content #qg-secondary-content .qg-aside h2 {
