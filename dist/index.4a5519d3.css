@@ -20,6 +20,7 @@
 
 .qg-filter-by-results {
   margin-bottom: 2rem;
+  display: none;
 }
 
 .qg-filter-by-results .qg-filter-by-results__form label, .qg-filter-by-results .qg-btn__filter, .qg-filter-by-results .qg-filter-by-results__form .label {
