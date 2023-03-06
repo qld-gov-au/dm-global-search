@@ -954,7 +954,8 @@ function filterResultsTemplate() {
         e.preventDefault();
         const params = new URLSearchParams(location.search);
         const selectedRadioBtn = document.querySelector('input[name="filterBy"]:checked');
-        params.set("scope", selectedRadioBtn?.getAttribute("data-scope") || "");
+        // params.set('scope', selectedRadioBtn?.getAttribute('data-scope') || '')
+        params.set("scope", "disaster.qld.gov.au");
         params.set("profile", selectedRadioBtn?.getAttribute("data-profile") || "");
         params.set("page", "1");
         params.set("start_rank", "1");
@@ -1026,7 +1027,7 @@ function mainTemplate(response, paramMap) {
     const { resultPacket , curator  } = response;
     const { exhibits  } = curator;
     return (0, _litHtml.html)`
-        ${exhibits.length > 0 ? (0, _featuredResults.featuredResultsTemplate)(exhibits) : ""}
+        ${exhibits.length > 0 ? (0, _featuredResults.featuredResultsTemplate)(exhibits) : ""} 
         ${(0, _searchResults.searchResultsTemplate)(resultPacket)}
         ${(0, _pagination.paginationTemplate)(response, paramMap)}
     `;
@@ -1074,7 +1075,7 @@ function paginationTemplate(response, paramMap) {
     const currUrlParameterMap = (0, _urlParameter.urlParameterMap)();
     const numberOfPages = Math.ceil(totalMatching / paginationOnPage);
     const startRankVal = Math.floor(parseInt(String(currUrlParameterMap.startRank / 10)) / 10);
-    const buildHref = `?query=${currUrlParameterMap.query}&num_ranks=${currUrlParameterMap.numRanks || paginationOnPage}&tiers=10&collection=${currUrlParameterMap.collection}&profile=${currUrlParameterMap.profile}&second_profile=&scope=${currUrlParameterMap.scope}&label=`;
+    const buildHref = `?query=${currUrlParameterMap.query}&num_ranks=${currUrlParameterMap.numRanks || paginationOnPage}&tiers=10&collection=${currUrlParameterMap.collection}&profile=${currUrlParameterMap.profile}&second_profile=&scope=disaster.qld.gov.au&label=`;
     // determine pagination start value
     const paginationStartValue = function() {
         return startRankVal * 10 + 1;
@@ -1408,33 +1409,6 @@ function searchForm() {
                             <span class="d-none d-md-block d-lg-block">Search</span>
                             <i class="fa fa-search fa-rotate-90 d-md-none d-lg-none"></i>
                         </button>
-                        <!-- <div class="qg-search-concierge qg-search-concierge-initial">
-                            <div class="qg-search-concierge-group helper">
-                                <div class="qg-search-concierge-content">
-                                    <h4>Popular services</h4>
-                                    <ul class="list-group">
-                                        <li class="list-group-item"><a href="https://www.service.transport.qld.gov.au/renewregistration/public/Welcome.xhtml" tabindex="-1" data-analytics-link-group="qg-global-search-popular-services">Renew vehicle or boat rego</a></li>
-                                        <li class="list-group-item"><a href="https://www.service.transport.qld.gov.au/checkmydemeritpoints/public/Welcome.xhtml" tabindex="-1" data-analytics-link-group="qg-global-search-popular-services">Check my licence demerit points</a></li>
-                                        <li class="list-group-item"><a href="https://www.qld.gov.au/transport/licensing/driver-licensing/renew-replace/renew/online" tabindex="-1" data-analytics-link-group="qg-global-search-popular-services">Renew my driving licence</a></li>
-                                        <li class="list-group-item"><a href="https://www.change-of-address.services.qld.gov.au/" tabindex="-1" data-analytics-link-group="qg-global-search-popular-services">Change my address</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="qg-search-concierge-group helper">
-                                <div class="qg-search-concierge-content">
-                                    <h4>Browse by category</h4>
-                                    <ul class="list-group">
-                                        <li class="list-group-item"><a href="https://www.qld.gov.au/transport" tabindex="-1">Transport and motoring</a></li>
-                                        <li class="list-group-item"><a href="https://www.qld.gov.au/jobs" tabindex="-1">Employment and jobs</a></li>
-                                        <li class="list-group-item"><a href="https://www.qld.gov.au/education" tabindex="-1">Education and training</a></li>
-                                        <li class="list-group-item"><a href="https://www.qld.gov.au/about" tabindex="-1">Queensland and its government</a></li>
-                                    </ul>
-                                    <a href="https://www.qld.gov.au/queenslanders" tabindex="-1" class="all" data-analytics-link-group="qg-global-search-category">Browse all categories</a>
-                                </div>
-                            </div> 
-                        </div>
-                        -->
-
                         <div class="qg-search-concierge qg-search-concierge-help">
                             <div class="qg-search-concierge-group suggestions" @click="${onSubmit}"></div>
                             <div class="qg-search-concierge-group highlight"></div>

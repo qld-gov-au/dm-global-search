@@ -89,33 +89,6 @@ export function searchForm () {
                             <span class="d-none d-md-block d-lg-block">Search</span>
                             <i class="fa fa-search fa-rotate-90 d-md-none d-lg-none"></i>
                         </button>
-                        <!-- <div class="qg-search-concierge qg-search-concierge-initial">
-                            <div class="qg-search-concierge-group helper">
-                                <div class="qg-search-concierge-content">
-                                    <h4>Popular services</h4>
-                                    <ul class="list-group">
-                                        <li class="list-group-item"><a href="https://www.service.transport.qld.gov.au/renewregistration/public/Welcome.xhtml" tabindex="-1" data-analytics-link-group="qg-global-search-popular-services">Renew vehicle or boat rego</a></li>
-                                        <li class="list-group-item"><a href="https://www.service.transport.qld.gov.au/checkmydemeritpoints/public/Welcome.xhtml" tabindex="-1" data-analytics-link-group="qg-global-search-popular-services">Check my licence demerit points</a></li>
-                                        <li class="list-group-item"><a href="https://www.qld.gov.au/transport/licensing/driver-licensing/renew-replace/renew/online" tabindex="-1" data-analytics-link-group="qg-global-search-popular-services">Renew my driving licence</a></li>
-                                        <li class="list-group-item"><a href="https://www.change-of-address.services.qld.gov.au/" tabindex="-1" data-analytics-link-group="qg-global-search-popular-services">Change my address</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="qg-search-concierge-group helper">
-                                <div class="qg-search-concierge-content">
-                                    <h4>Browse by category</h4>
-                                    <ul class="list-group">
-                                        <li class="list-group-item"><a href="https://www.qld.gov.au/transport" tabindex="-1">Transport and motoring</a></li>
-                                        <li class="list-group-item"><a href="https://www.qld.gov.au/jobs" tabindex="-1">Employment and jobs</a></li>
-                                        <li class="list-group-item"><a href="https://www.qld.gov.au/education" tabindex="-1">Education and training</a></li>
-                                        <li class="list-group-item"><a href="https://www.qld.gov.au/about" tabindex="-1">Queensland and its government</a></li>
-                                    </ul>
-                                    <a href="https://www.qld.gov.au/queenslanders" tabindex="-1" class="all" data-analytics-link-group="qg-global-search-category">Browse all categories</a>
-                                </div>
-                            </div> 
-                        </div>
-                        -->
-
                         <div class="qg-search-concierge qg-search-concierge-help">
                             <div class="qg-search-concierge-group suggestions" @click="${onSubmit}"></div>
                             <div class="qg-search-concierge-group highlight"></div>
