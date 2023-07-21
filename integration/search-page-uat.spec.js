@@ -1,4 +1,5 @@
 const ROOT_URL = 'http://localhost:1234'
+import { search_collection } from '../src/utils/constants'
 
 const wt = 500;
 function formatString(text) {
@@ -12,7 +13,7 @@ context('Search page', () => {
       .get('.qg-filter-by-results')
       .should('not.exist')
     // also if profile is 'qld', the filter should not appear
-    cy.visit(`${ROOT_URL}/?query=rego&num_ranks=10&tiers=off&collection=qld-gov&profile=qld`)
+    cy.visit(`${ROOT_URL}/?query=rego&num_ranks=10&tiers=off&collection=${search_collection}&profile=qld`)
     cy
       .get('.qg-filter-by-results')
       .should('not.exist')
@@ -20,7 +21,7 @@ context('Search page', () => {
 
   // scope is present with no profile
   it("Filter should appear if scope is present, but if its value is not 'qld.gov.au'", () => {
-    cy.visit(`${ROOT_URL}/?query=rego&num_ranks=10&tiers=off&collection=qld-gov&profile=qld&scope=tmr.qld.gov.au&collection=qld-gov`)
+    cy.visit(`${ROOT_URL}/?query=rego&num_ranks=10&tiers=off&collection=${search_collection}&profile=qld&scope=tmr.qld.gov.au&collection=${search_collection}`)
     cy
       .get('.qg-filter-by-results')
       .should('be.visible')
@@ -42,7 +43,7 @@ context('Search page', () => {
 
   // profile is present with no scope
   it('Filter should be visible if profile is present with no scope', () => {
-    cy.visit(`${ROOT_URL}/?query=rego&num_ranks=10&tiers=off&collection=qld-gov&profile=forgov&scope=&collection=qld-gov&filter=true`)
+    cy.visit(`${ROOT_URL}/?query=rego&num_ranks=10&tiers=off&collection=${search_collection}&profile=forgov&scope=&collection=${search_collection}&filter=true`)
     cy
       .get('.qg-filter-by-results')
       .should('be.visible')

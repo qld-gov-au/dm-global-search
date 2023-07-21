@@ -3,7 +3,7 @@ export interface Response {
         exhibits: Array<any>;
     }
     resultPacket : {
-        contextualNavigation: {
+        query: {
             searchTerm : string,
             currStart: string,
             currEnd : string,
