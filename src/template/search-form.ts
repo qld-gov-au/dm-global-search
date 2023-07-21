@@ -4,6 +4,9 @@ import { mainTemplate } from './main'
 import { urlParameterMap } from '../utils/urlParameter'
 import { relatedResultsTemplate } from './related-search'
 import { noResultsTemplate } from './no-results'
+import { search_url } from '../utils/constants'
+import { search_collection } from '../utils/constants'
+import { API_URL } from '../utils/constants'
 
 export function searchForm () {
   const currUrlParameterMap = urlParameterMap()
@@ -23,7 +26,7 @@ export function searchForm () {
       params.set('start_rank', '1')
       params.set('num_ranks', '10')
       params.set('tiers', 'off')
-      params.set('collection', 'qld-gov')
+      params.set('collection', `${search_collection}`)
 
       // push history stack and fetch data
       setTimeout(function () {
@@ -65,7 +68,7 @@ export function searchForm () {
   }
 
   return html`
-        <form action="#" role="search" class="qg-site-search__form qg-site-search__component qg-search-form qg-site-search__multiple-forms" data-suggestions="https://find.search.qld.gov.au/s/suggest.json?collection=qld-gov&fmt=json%2B%2B&alpha=0.5&profile=qld&scope=disaster.qld.gov.au" data-results-url="https://find.search.qld.gov.au/s/search.json?collection=qld-gov&profile=qld&scope=disaster.qld.gov.au&smeta_sfinder_sand=yes">
+        <form action="#" role="search" class="qg-site-search__form qg-site-search__component qg-search-form qg-site-search__multiple-forms" data-suggestions="${search_url}/s/suggest.json?collection=${search_collection}&fmt=json%2B%2B&alpha=0.5&profile=qld&scope=disaster.qld.gov.au" data-results-url="${API_URL}?collection=${search_collection}&profile=qld&scope=disaster.qld.gov.au&smeta_sfinder_sand=yes">
                     <div class="input-group">
                         <label for="qg-search-query-sm" class="qg-visually-hidden">Search Queensland Government</label>
                         <input type="text" name="query" id="qg-search-query-sm"  class="form-control qg-search-site__input" autocomplete="off" placeholder="Search website" tabindex="0" aria-required="true" aria-expanded="false" value="${currUrlParameterMap.query}" @keydown="${onInputClick}" @click="${onInputClick}"/>
