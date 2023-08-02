@@ -36,7 +36,7 @@ export class SearchModule {
      * */
   async fetchData () {
     this.spinnerEl?.removeAttribute('hidden')
-    const response = await fetch(`${API_URL}?query=${this.urlParameter.query}&collection=${this.urlParameter.collection}&profile=${this.urlParameter.profile}&scope=${this.urlParameter.scope}&start_rank=${this.urlParameter.startRank}`)
+    const response = await fetch(`${API_URL}?query=${this.urlParameter.query}&collection=${this.urlParameter.collection}&profile=${this.urlParameter.profile}&start_rank=${this.urlParameter.startRank}`)
     return await response.json()
   }
 

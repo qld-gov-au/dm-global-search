@@ -19,12 +19,10 @@ export class FilterModule {
      * */
   setSessionStorage () {
     const profile = this.urlParameter.profile
-    const scope = this.urlParameter.scope
     const label = this.urlParameter.label
 
-    if ((profile) && (profile !== 'disaster' || scope)) {
+    if ((profile) && (profile !== 'disaster')) {
       sessionStorage.setItem('fcProfile', profile)
-      sessionStorage.setItem('fcScope', scope)
     }
     label ? sessionStorage.setItem('fcLabel', label) : ''
   }
@@ -35,7 +33,7 @@ export class FilterModule {
      * */
   filterResultsTemplate () {
     const profile = this.urlParameter.profile
-    if ((this.urlParameter.filter) || (profile && profile !== 'disaster') || (this.urlParameter.scope)) {
+    if ((this.urlParameter.filter) || (profile && profile !== 'disaster')) {
       render(filterResultsTemplate(), document.getElementById('qg-filter-by-results') as HTMLBodyElement)
     }
   }
