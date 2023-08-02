@@ -24,8 +24,6 @@ export function searchForm () {
       params.set('profile', currUrlParameterMap.profile)
       params.set('page', '1')
       params.set('start_rank', '1')
-      params.set('num_ranks', '10')
-      params.set('tiers', 'off')
       params.set('collection', `${search_collection}`)
 
       // push history stack and fetch data

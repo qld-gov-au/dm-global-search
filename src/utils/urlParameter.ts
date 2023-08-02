@@ -9,7 +9,6 @@ export const urlParameterMap = () => {
     profile: rSpe(urlParams.get('profile') || ''),
     label: rSpe(urlParams.get('label') || ''),
     filter: rSpe(urlParams.get('filter') || ''),
-    numRanks: parseInt(urlParams.get('num_ranks') as string) || 0,
     startRank: parseInt(urlParams.get('start_rank') as string) || 1,
     collection: (urlParams.get('collection') || '').replace(/\%7E/g, '~'),
     //scope: rSpe(urlParams.get('scope')) || '',
