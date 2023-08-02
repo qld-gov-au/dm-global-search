@@ -68,7 +68,7 @@ export function searchForm () {
   }
 
   return html`
-        <form action="#" role="search" class="qg-site-search__form qg-site-search__component qg-search-form qg-site-search__multiple-forms" data-suggestions="${search_url}/s/suggest.json?collection=${search_collection}&fmt=json%2B%2B&alpha=0.5&profile=qld&scope=disaster.qld.gov.au" data-results-url="${API_URL}?collection=${search_collection}&profile=qld&scope=disaster.qld.gov.au&smeta_sfinder_sand=yes">
+        <form action="#" role="search" class="qg-site-search__form qg-site-search__component qg-search-form qg-site-search__multiple-forms" data-suggestions="${search_url}/s/suggest.json?collection=${search_collection}&fmt=json%2B%2B&alpha=0.5&profile=disaster&scope=disaster.qld.gov.au" data-results-url="${API_URL}?collection=${search_collection}&profile=disaster&scope=disaster.qld.gov.au&smeta_sfinder_sand=yes">
                     <div class="input-group">
                         <label for="qg-search-query-sm" class="qg-visually-hidden">Search Queensland Government</label>
                         <input type="text" name="query" id="qg-search-query-sm"  class="form-control qg-search-site__input" autocomplete="off" placeholder="Search website" tabindex="0" aria-required="true" aria-expanded="false" value="${currUrlParameterMap.query}" @keydown="${onInputClick}" @click="${onInputClick}"/>
