@@ -6,6 +6,5 @@ export interface ParamMap {
     numRanks : number
     startRank : number
     collection : string
-    scope : string
     activePage : number
 }

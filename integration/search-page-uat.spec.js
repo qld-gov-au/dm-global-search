@@ -21,7 +21,7 @@ context('Search page', () => {
 
   // scope is present with no profile
   it("Filter should appear if scope is present, but if its value is not 'qld.gov.au'", () => {
-    cy.visit(`${ROOT_URL}/?query=rego&collection=${search_collection}&profile=disaster&scope=tmr.qld.gov.au&collection=${search_collection}`)
+    cy.visit(`${ROOT_URL}/?query=rego&collection=${search_collection}&profile=disaster&collection=${search_collection}`)
     cy
       .get('.qg-filter-by-results')
       .should('be.visible')
@@ -43,7 +43,7 @@ context('Search page', () => {
 
   // profile is present with no scope
   it('Filter should be visible if profile is present with no scope', () => {
-    cy.visit(`${ROOT_URL}/?query=rego&collection=${search_collection}&profile=forgov&scope=&collection=${search_collection}&filter=true`)
+    cy.visit(`${ROOT_URL}/?query=rego&collection=${search_collection}&profile=forgov&collection=${search_collection}&filter=true`)
     cy
       .get('.qg-filter-by-results')
       .should('be.visible')

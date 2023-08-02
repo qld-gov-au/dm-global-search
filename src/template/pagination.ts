@@ -14,7 +14,7 @@ export function paginationTemplate (response: Response, paramMap: ParamMap) {
   const numberOfPages: number = Math.ceil(totalMatching / paginationOnPage)
   const startRankVal: number = Math.floor(parseInt(String(currUrlParameterMap.startRank / 10)) / 10)
 
-  const buildHref = `?query=${currUrlParameterMap.query}&collection=${currUrlParameterMap.collection}&profile=${currUrlParameterMap.profile}&second_profile=&scope=disaster.qld.gov.au&label=`
+  const buildHref = `?query=${currUrlParameterMap.query}&collection=${currUrlParameterMap.collection}&profile=${currUrlParameterMap.profile}&second_profile=&label=`
 
   // determine pagination start value
   const paginationStartValue = function () {

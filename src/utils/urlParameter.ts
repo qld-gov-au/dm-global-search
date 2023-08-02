@@ -11,8 +11,6 @@ export const urlParameterMap = () => {
     filter: rSpe(urlParams.get('filter') || ''),
     startRank: parseInt(urlParams.get('start_rank') as string) || 1,
     collection: (urlParams.get('collection') || '').replace(/\%7E/g, '~'),
-    //scope: rSpe(urlParams.get('scope')) || '',
-    scope: 'disaster.qld.gov.au',
     activePage: parseInt(urlParams.get('page') as string) || 1
   }
 }
