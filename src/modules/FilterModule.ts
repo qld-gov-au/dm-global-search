@@ -22,7 +22,7 @@ export class FilterModule {
     const scope = this.urlParameter.scope
     const label = this.urlParameter.label
 
-    if ((profile) && (profile !== 'qld' || scope)) {
+    if ((profile) && (profile !== 'disaster' || scope)) {
       sessionStorage.setItem('fcProfile', profile)
       sessionStorage.setItem('fcScope', scope)
     }
@@ -35,7 +35,7 @@ export class FilterModule {
      * */
   filterResultsTemplate () {
     const profile = this.urlParameter.profile
-    if ((this.urlParameter.filter) || (profile && profile !== 'qld') || (this.urlParameter.scope)) {
+    if ((this.urlParameter.filter) || (profile && profile !== 'disaster') || (this.urlParameter.scope)) {
       render(filterResultsTemplate(), document.getElementById('qg-filter-by-results') as HTMLBodyElement)
     }
   }

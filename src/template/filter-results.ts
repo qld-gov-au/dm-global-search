@@ -74,7 +74,7 @@ export function filterResultsTemplate () {
                         <label for="customOption">${label}</label>
                       </li>
                       <li>
-                        <input name="filterBy" id="qld" type="radio" value="qld" data-profile='qld' data-scope='' @click="${onFilterChange}" ?checked=${sessionStorage.getItem('rcSelectedRadiobutton') === 'qld'}/>
+                        <input name="filterBy" id="qld" type="radio" value="qld" data-profile='disaster' data-scope='' @click="${onFilterChange}" ?checked=${sessionStorage.getItem('rcSelectedRadiobutton') === 'qld'}/>
                         <label for="qld">all Queensland Government</label>
                       </li>
                     </ol>
