@@ -30,8 +30,9 @@ export function searchForm () {
         params.set('query', currInputValue)
         history.pushState({}, '', `?${params.toString()}`)
         fetchData(params.toString()).then(data => {
-          const { contextualNavigation, results } = data?.response?.resultPacket
-          if (results?.length) {
+          const contextualNavigation = data?.response?.resultPacket?.contextualNavigation
+          const totalMatching = data?.response?.resultPacket?.resultsSummary?.totalMatching
+          if (totalMatching > 0) {
             render(mainTemplate(data?.response, currUrlParameterMap), document.getElementById('qg-search-results__container') as HTMLBodyElement)
             render(relatedResultsTemplate(contextualNavigation), document.getElementById('related-search__tags')!)
           } else {
