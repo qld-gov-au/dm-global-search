@@ -21,7 +21,7 @@ export class FilterModule {
     const profile = this.urlParameter.profile
     const label = this.urlParameter.label
 
-    if ((profile) && (profile !== 'disaster')) {
+    if ((profile) && (profile !== 'qld')) {
       sessionStorage.setItem('fcProfile', profile)
     }
     label ? sessionStorage.setItem('fcLabel', label) : ''
@@ -33,7 +33,7 @@ export class FilterModule {
      * */
   filterResultsTemplate () {
     const profile = this.urlParameter.profile
-    if ((this.urlParameter.filter) || (profile && profile !== 'disaster')) {
+    if ((this.urlParameter.filter) || (profile && profile !== 'qld')) {
       render(filterResultsTemplate(), document.getElementById('qg-filter-by-results') as HTMLBodyElement)
     }
   }
